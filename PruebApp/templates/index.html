@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFA500;
+        }
+
+        .button-container {
+            background-color: #000000;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 30px;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 24px;
+            border-radius: 8px;
+            border: none;
+            background-color: #25D366;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #128C7E;
+        }
+
+        .input-container {
+            margin-top: 20px;
+        }
+
+        .input-container input {
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 50%;
+        }
+
+        .button-container:first-child .input-container {
+            display: none;
+        }
+
+        .button-container .show-button {
+            margin-top: 20px;
+        }
+
+        .show-button button {
+            padding: 12px 24px;
+
+            font-size: 18px;
+            background-color: #3b5998;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .show-button button:hover {
+            background-color: #2d4373;
+        }
+
+        /* Estilo para los títulos dentro de los contenedores */
+        .container-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Alinear los contenedores de izquierda a derecha */
+        .container-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Estilo para el título principal */
+        h1 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DJANGO TALLER FINAL ALVIAL </h1>
+
+    <div class="container-wrapper">
+        <div class="button-container">
+            <div class="container-title">API REST sin Framework</div>
+            <a class="button" href="ver">Todos</a>
+        </div>
+
+        <div class="button-container">
+            <div class="container-title">API REST Función</div>
+            <a class="button" href="listadoF">Todos</a>
+            <div class="input-container">
+                <input id="inputListadoF" type="text" placeholder="ID">
+            </div>
+            <div class="show-button">
+                <button class="button" onclick="mostrarListadoF()">Mostrar</button>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="container-title">API REST con Clase</div>
+            <a class="button" href="detalleC">Todos</a>
+            <div class="input-container">
+                <input id="inputDetalleC" type="text" placeholder="ID">
+            </div>
+            <div class="show-button">
+                <button class="button" onclick="mostrarDetalleC()">Mostrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarListadoF() {
+            var id = document.getElementById("inputListadoF").value;
+            window.location.href = "listadoF/" + id;
+        }
+
+        function mostrarDetalleC() {
+            var id = document.getElementById("inputDetalleC").value;
+            window.location.href = "detalleC/" + id;
+        }
+    </script>
+</body>
+
+</html>
